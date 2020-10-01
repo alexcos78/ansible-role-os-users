@@ -1,0 +1,10 @@
+---
+- name: Set authorized key
+  authorized_key:
+    user: "{{ item.os_user_name }}"
+    state: present
+    key: '{{ item.os_user_ssh_public_key }}'
+  with_items: "{{ os_users }}"
+  when:
+    -  item.os_user_ssh_public_key is defined
+    -  item.os_user_ssh_public_key != ''
