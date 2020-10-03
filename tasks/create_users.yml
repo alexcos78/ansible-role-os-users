@@ -27,4 +27,4 @@
   with_items: "{{ os_users }}"
   when:
     -  item.os_user_add_to_sudoers is defined
-    -  item.os_user_add_to_sudoers | bool
+    -  item.os_user_add_to_sudoers|bool
