@@ -18,13 +18,13 @@
   with_items: "{{ os_users }}"
   when: ansible_os_family == "Debian"
 
-- name: 'User rules for {{ os_users.os_user_name }}'
-  lineinfile:
-    dest: '/etc/sudoers'
-    state: present
-    line: '{{ item.os_user_name }} ALL=(ALL) NOPASSWD:ALL'
-    insertafter: EOF
-  with_items: "{{ os_users }}"
-  when:
-    -  item.os_user_add_to_sudoers is defined
-    -  item.os_user_add_to_sudoers|bool
+#- name: 'User rules for {{ os_users.os_user_name }}'
+#  lineinfile:
+#    dest: '/etc/sudoers'
+#    state: present
+#    line: '{{ item.os_user_name }} ALL=(ALL) NOPASSWD:ALL'
+#    insertafter: EOF
+#  with_items: "{{ os_users }}"
+#  when:
+#    -  item.os_user_add_to_sudoers is defined
+#    -  item.os_user_add_to_sudoers|bool
