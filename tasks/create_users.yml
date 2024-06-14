@@ -19,7 +19,7 @@
   when: ansible_os_family == "Debian"
 
 - debug:
-    msg: "{{ os_user_name }}"
+    msg: "{{ item.os_user_add_to_sudoers }}"
 
 - name: 'User rules for {{ os_users.os_user_name }}'
   lineinfile:
