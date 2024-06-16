@@ -1,6 +1,6 @@
 ---
-- include: create_users.yml
+- include_tasks: create_users.yml
   when: os_users|length > 0
 
-- include: configure_ssh.yml
+- include_tasks: configure_ssh.yml
   when: os_users|length > 0
